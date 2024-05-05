@@ -1,8 +1,5 @@
-import company.abstracts.Employee;
 import company.models.Manager;
 import company.models.Worker;
-import java.util.ArrayList;
-import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Worker worker1 = new Worker("x", 1000.0, 1, "2004-01-01", "praca1");
@@ -11,17 +8,14 @@ public class Main {
         Worker worker4 = new Worker("a", 1600.0, 4, "2008-05-05", "praca4");
         Manager manager = new Manager("b", 2000.0, 5, "2001-01-01", "praca5");
 
-        List<Employee> employees = new ArrayList<>();
-        employees.add(worker1);
-        employees.add(worker2);
-        employees.add(worker3);
-        employees.add(worker3);
-        employees.add(worker4);
-        employees.add(manager);
-        
-        for (Employee employee: employees){
-            employee.work();
-            System.out.println("- " + employee.getName() + " (ID: " + employee.getId() + ", Position: " + employee.getPosition() + ", Hire date: " + employee.getHireDate() + ", Salary: " + employee.getSalary() + ")");
-        }
+    System.out.println(worker1.getName()+" has code: "+worker1.hashCode());
+    System.out.println(worker2.getName()+" has code: "+worker2.hashCode());
+    System.out.println(worker3.getName()+" has code: "+worker3.hashCode());
+    System.out.println(worker4.getName()+" has code: "+worker4.hashCode());
+    System.out.println(manager.getName()+" has code: "+manager.hashCode());
+    
+    System.out.println(worker1.getName()+" equal worker2 " + worker1.equals(worker2));
+    System.out.println(worker1.getName()+" equal worker4 " + worker1.equals(worker4));
+    System.out.println(worker1.getName()+" equal manager " + worker1.equals(manager));
     }
 }
